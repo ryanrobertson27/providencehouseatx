@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.1.4"
+  },
+  "dependencies": {
+    "lightgallery": "^2.5.0",
+    "photoswipe": "^5.2.8",
+    "swup": "^2.0.15",
+    "zoomwall.js": "^2.0.3"
+  }
+}
