@@ -7,16 +7,11 @@
 
 let images = document.querySelectorAll("img");
 
-images.forEach((image) => {
-  image.addEventListener("click", function () {
-    let imageUrl = image.src;
-
+for (let i = 0; i < images.length; i++) {
+  images[i].addEventListener("click", function () {
     const body = document.querySelector("body");
+
     const imageDiv = document.createElement("div");
-    const largeImage = document.createElement("img");
-
-    largeImage.src = imageUrl;
-
     imageDiv.classList.add(
       "fixed",
       "w-screen",
@@ -27,39 +22,42 @@ images.forEach((image) => {
       "items-center",
       "text-white"
     );
+
+    let largeImage = document.createElement("img");
+    largeImage.src = images[i].src;
     largeImage.classList.add("max-w-50", "h-auto");
 
     body.append(imageDiv);
-
     imageDiv.append(largeImage);
 
     // upper x creationg
-
     const xButton = document.createElement("img");
     xButton.src = "../images/x-icon.png";
     xButton.classList.add("fixed", "top-0", "right-0", "m-5");
-    // xButton.setAttribute("id", "close-button");
     imageDiv.append(xButton);
 
     // forward button creation
-
     const forwardImg = document.createElement("img");
     forwardImg.src = "../images/forward-arrow.png";
     forwardImg.classList.add("fixed", "right-0", "m-5");
     imageDiv.append(forwardImg);
 
     // back button creation
-
     const backImg = document.createElement("img");
     backImg.src = "../images/back-arrow.png";
     backImg.classList.add("fixed", "left-0", "m-5");
     imageDiv.append(backImg);
 
     backImg.onclick = function () {
-      console.log("hello");
+      image = images[i - 1];
+      largeImage.src = image.src;
+      imageDiv.append(largeImage);
     };
 
-    forwardImg.onclick = function () {};
+    forwardImg.onclick = function () {
+      largeImage.src = images[i + 1].src;
+      imageDiv.append(largeImage);
+    };
 
     // remove image overlay
 
@@ -67,6 +65,4 @@ images.forEach((image) => {
       imageDiv.remove();
     };
   });
-});
-
-function removeImage() {}
+}
