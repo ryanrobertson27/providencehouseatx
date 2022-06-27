@@ -8,61 +8,77 @@
 let images = document.querySelectorAll("img");
 
 for (let i = 0; i < images.length; i++) {
-  images[i].addEventListener("click", function () {
-    const body = document.querySelector("body");
+	images[i].addEventListener("click", function () {
+		const body = document.querySelector("body");
 
-    const imageDiv = document.createElement("div");
-    imageDiv.classList.add(
-      "fixed",
-      "w-screen",
-      "h-screen",
-      "bg-black/75",
-      "flex",
-      "justify-center",
-      "items-center",
-      "text-white"
-    );
+		const imageDiv = document.createElement("div");
+		imageDiv.classList.add(
+			"fixed",
+			"w-screen",
+			"h-screen",
+			"bg-black/75",
+			"flex",
+			"justify-center",
+			"items-center",
+			"text-white"
+		);
 
-    let largeImage = document.createElement("img");
-    largeImage.src = images[i].src;
-    largeImage.classList.add("max-w-50", "h-auto");
+		let largeImage = document.createElement("img");
+		const imageOverlay = (i) => {
+			largeImage.src = images[i].src;
+			largeImage.classList.add("max-w-50", "h-auto");
 
-    body.append(imageDiv);
-    imageDiv.append(largeImage);
+			imageDiv.append(largeImage);
+		};
 
-    // upper x creationg
-    const xButton = document.createElement("img");
-    xButton.src = "../images/x-icon.png";
-    xButton.classList.add("fixed", "top-0", "right-0", "m-5");
-    imageDiv.append(xButton);
+		body.append(imageDiv);
+		imageOverlay(i);
 
-    // forward button creation
-    const forwardImg = document.createElement("img");
-    forwardImg.src = "../images/forward-arrow.png";
-    forwardImg.classList.add("fixed", "right-0", "m-5");
-    imageDiv.append(forwardImg);
+		// upper x creationg
+		const xButton = document.createElement("img");
+		xButton.src = "../images/x-icon.png";
+		xButton.classList.add("fixed", "top-0", "right-0", "m-5");
+		imageDiv.append(xButton);
 
-    // back button creation
-    const backImg = document.createElement("img");
-    backImg.src = "../images/back-arrow.png";
-    backImg.classList.add("fixed", "left-0", "m-5");
-    imageDiv.append(backImg);
+		// forward button creation
+		const forwardImg = document.createElement("img");
+		forwardImg.src = "../images/forward-arrow.png";
+		forwardImg.classList.add("fixed", "right-0", "m-5");
+		imageDiv.append(forwardImg);
 
-    backImg.onclick = function () {
-      image = images[i - 1];
-      largeImage.src = image.src;
-      imageDiv.append(largeImage);
-    };
+		// back button creation
+		const backImg = document.createElement("img");
+		backImg.src = "../images/back-arrow.png";
+		backImg.classList.add("fixed", "left-0", "m-5");
+		imageDiv.append(backImg);
 
-    forwardImg.onclick = function () {
-      largeImage.src = images[i + 1].src;
-      imageDiv.append(largeImage);
-    };
+		let count = 0;
 
-    // remove image overlay
+		backImg.onclick = function () {
+			if (i + count > 0) {
+				largeImage.remove();
 
-    xButton.onclick = function () {
-      imageDiv.remove();
-    };
-  });
+				count--;
+				largeImage.src = images[i + count].src;
+				imageDiv.append(largeImage);
+				console.log(i + count);
+			}
+		};
+
+		forwardImg.onclick = function () {
+			if (i + count < images.length - 1) {
+				largeImage.remove();
+
+				count++;
+				largeImage.src = images[i + count].src;
+				imageDiv.append(largeImage);
+				console.log(i + count);
+			}
+		};
+
+		// remove image overlay
+		xButton.onclick = function () {
+			imageDiv.remove();
+		};
+	});
 }
