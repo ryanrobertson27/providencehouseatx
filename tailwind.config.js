@@ -7,7 +7,11 @@ module.exports = {
 		"node_modules/zoomwall.js/**/*.{js, css}",
 	],
 	theme: {
-		extend: {},
+		extend: {
+			backgroundImage: {
+				"hero-image": "url('/images/hero-image.jpg')",
+			},
+		},
 	},
 	plugins: [],
 };
