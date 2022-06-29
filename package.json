@@ -4,7 +4,6 @@
     "tailwindcss": "^3.1.4"
   },
   "dependencies": {
-    "photoswipe": "^5.2.8",
-    "swup": "^2.0.15"
+    "photoswipe": "^5.2.8"
   }
 }
