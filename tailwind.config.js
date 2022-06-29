@@ -2,16 +2,18 @@
 module.exports = {
 	content: [
 		"index.html",
-		"script.js",
-		"pages/**/*.html",
-		"node_modules/zoomwall.js/**/*.{js, css}",
+		"pastshows.html",
+		"upcoming.html",
+		"contact.html",
+		"js/script.js",
 	],
 	theme: {
 		extend: {
 			backgroundImage: {
 				"hero-image": "url('/images/hero-image.jpg')",
+				"static-image": "url('/images/static-background.jpeg')",
 			},
 		},
+		plugins: [require("@tailwindcss/forms")],
 	},
-	plugins: [],
 };

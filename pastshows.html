@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+	<html lang="en">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gallery</title>
+		<link rel="stylesheet" href="/dist/output.css" />
+		<link rel="icon" href="../images/house-icon.png" />
+		<script defer src="/js/script.js"></script>
+	</head>
+
+	<body class="h-screen flex flex-col items-center bg-stone-100">
+		<header
+			class="h-16 fixed flex z-50 flex-row justify-between items-center w-screen bg-stone-50 bg-opacity-100 border-b-2 border-stone-300"
+		>
+			<div class="flex group ml-10">
+				<!-- <img src="/images/prov-airstream.png" class="bg-black h-10" alt="" /> -->
+			</div>
+
+			<div class="flex">
+				<button
+					onclick="location.href='index.html'"
+					class="px-10 py-2 text-stone-900 font-semibold hover:bg-stone-800 hover:text-stone-50"
+				>
+					HOME
+				</button>
+				<button
+					onclick="location.href='upcoming.html'"
+					class="px-10 py-2 text-stone-900 font-semibold hover:bg-stone-800 hover:text-stone-50"
+				>
+					UPCOMING
+				</button>
+				<button
+					onclick="location.href='pastshows.html'"
+					class="px-10 py-2 text-stone-900 font-semibold underline underline-offset-4 decoration-2 hover:bg-stone-800 hover:text-stone-50"
+				>
+					PAST SHOWS
+				</button>
+				<button
+					onclick="location.href='contact.html'"
+					class="px-10 py-2 text-stone-900 font-semibold hover:bg-stone-800 hover:text-stone-50"
+				>
+					CONTACT
+				</button>
+			</div>
+			<div class="flex mr-10 grayscale-0">
+				<button
+					class=""
+					onclick="location.href='https://www.facebook.com/providencehouseatx'"
+				>
+					<img class="w-auto px-2 h-8" src="/images/facebook-icon.png" alt="" />
+				</button>
+				<button
+					class=""
+					onclick="location.href='https://www.instagram.com/providencehouseatx/'"
+				>
+					<img
+						class="w-auto px-2 h-8"
+						src="/images/instagram-icon.png"
+						alt=""
+					/>
+				</button>
+			</div>
+		</header>
+		<main class="m-20">
+			<div class="my-10">
+				<h1
+					class="flex self-start text-6xl font-bold text-stone-800 bold uppercase mb-8"
+				>
+					PAST SHOWS
+				</h1>
+				<div
+					class="flex flex-row flex-wrap justify-between grow text-4xl text-slate-600 odd:bg-stone-800 uppercase font-semibold text-justify"
+				>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Lowercase Noises&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Grey Lakes&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Flatland Holler&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Laney Wright&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;MASSIVESAD&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Logan Garza&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Paper Lights&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Taylor Stearns&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Andy Davis&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Paper Route&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Derek Webb&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Hotel Neon&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Jason Barrows&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Zach Winters&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;The Light Parade&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Matthew Perryman Jones&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Marty O'Reilly&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Darion Ryan Robert&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Sylvie&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Monica Moser&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Emily Keeley&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Travis Sterrett&nbsp;</h1>
+					<h1 class="text-stone-500 hover:bg-stone-700 hover:text-stone-50">&nbsp;Campbell&nbsp;</h1>
+				</div>
+				
+			</div>
+			<div class="flex flex-col items-start my-10">
+				<h1 class="flex text-6xl font-bold text-stone-800 uppercase mb-8">
+					Gallery
+				</h1>
+				<ul id="gallery-ul" class="flex flex-wrap"></li>
+			</div>
+		</main>
+	</body>
+</html>

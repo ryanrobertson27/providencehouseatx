@@ -1,32 +1,54 @@
-// need to grab each img and make clickable
+const body = document.querySelector("body");
 
-// then I want to be able to click on the Image, which will bring that image to the foreground and grey out the background.  It will also create an x in the top right that will allow
-// for the user to click off that image.
+// programatically creating images on page
+for (let i = 1; i <= 171; i++) {
+	const image = document.createElement("img");
+	const li = document.createElement("li");
+	li.classList.add("h-[20vh]", "grow");
+	const ul = document.getElementById("gallery-ul");
+	ul.append(li);
+	li.setAttribute("id", `li-${i}`);
 
-// I coould after the fact implement a previous next button that can cycle through the images
+	image.src = `../images/past-shows/providence-house-${i}.jpg`;
+	image.classList.add(
+		"object-cover",
+		"w-full",
+		"h-full",
+		"max-h-full",
+		"max-w-full",
+		"hover:opacity-50",
+		"align-bottom",
+		"object-center",
+		"gallery-image"
+	);
+	image.setAttribute("loading", "lazy");
 
-let images = document.querySelectorAll("img");
+	li.append(image);
+}
 
+let images = document.querySelectorAll(".gallery-image");
+
+//creating Image overlay whenver image is selected
 for (let i = 0; i < images.length; i++) {
 	images[i].addEventListener("click", function () {
-		const body = document.querySelector("body");
-
 		const imageDiv = document.createElement("div");
 		imageDiv.classList.add(
 			"fixed",
+			"inset-0",
 			"w-screen",
 			"h-screen",
-			"bg-black/75",
+			"bg-black/[0.9]",
 			"flex",
 			"justify-center",
 			"items-center",
-			"text-white"
+			"text-white",
+			"z-50"
 		);
 
 		let largeImage = document.createElement("img");
 		const imageOverlay = (i) => {
 			largeImage.src = images[i].src;
-			largeImage.classList.add("max-w-50", "h-auto");
+			largeImage.classList.add("w-90", "h-auto", "p-20", "max-h-[90vh]");
 
 			imageDiv.append(largeImage);
 		};
@@ -52,7 +74,7 @@ for (let i = 0; i < images.length; i++) {
 		backImg.classList.add("fixed", "left-0", "m-5");
 		imageDiv.append(backImg);
 
-		let count = 0;
+		let count = 0; //
 
 		backImg.onclick = function () {
 			if (i + count > 0) {

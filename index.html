@@ -3,51 +3,98 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Providence House ATX</title>
 		<link rel="stylesheet" href="dist/output.css" />
 		<link rel="icon" href="../images/house-icon.png" />
-		<!-- <script defer src="node_modules/swup/dist/swup.min.js"></script> -->
 	</head>
 	<body class="flex h-screen bg-stone-50 bg-hero-image bg-center bg-auto">
+		<!-- header  -->
+
 		<header
-			class="h-12 fixed flex flex-row place-content-center w-screen bg-stone-50 bg-opacity-100 shadow-lg"
+			class="h-16 fixed flex flex-row justify-between items-center w-screen bg-stone-50 bg-opacity-100 shadow-lg border-b-2 border-stone-300"
 		>
-			<!-- <h1 class="absolute left-0 top-0 mx-10 mt-2 text-2xl">
-				Providence
-				<span class="bg-stone-700 text-white">&nbsp;House ATX&nbsp;</span>
-			</h1> -->
-			<button
-				class="underline underline-offset-4 decoration-2 px-10 text-stone-900 font-semibold hover:bg-stone-800 hover:text-stone-50"
-			>
-				HOME
-			</button>
-			<button
-				class="px-10 text-stone-900 font-semibold hover:bg-stone-800 hover:text-stone-50"
-			>
-				ABOUT
-			</button>
-			<button
-				class="px-10 text-stone-900 font-semibold hover:bg-stone-800 hover:text-stone-50"
-			>
-				UPCOMING
-			</button>
-			<button
-				class="px-10 text-stone-900 font-semibold hover:bg-stone-800 hover:text-stone-50"
-			>
-				CONTACT
-			</button>
+			<div class="flex group ml-10">
+				<!-- <img src="/images/prov-airstream.png" class="bg-black h-10" alt="" /> -->
+			</div>
+
+			<div class="flex">
+				<button
+					onclick="location.href='index.html'"
+					class="underline underline-offset-4 decoration-2 px-10 py-2 text-stone-900 font-semibold hover:bg-stone-800 hover:text-stone-50"
+				>
+					HOME
+				</button>
+				<button
+					onclick="location.href='upcoming.html'"
+					class="px-10 py-2 text-stone-900 font-semibold hover:bg-stone-800 hover:text-stone-50"
+				>
+					UPCOMING
+				</button>
+				<button
+					onclick="location.href='pastshows.html'"
+					class="px-10 py-2 text-stone-900 font-semibold hover:bg-stone-800 hover:text-stone-50"
+				>
+					PAST SHOWS
+				</button>
+				<button
+					onclick="location.href='contact.html'"
+					class="px-10 py-2 text-stone-900 font-semibold hover:bg-stone-800 hover:text-stone-50"
+				>
+					CONTACT
+				</button>
+			</div>
+			<div class="flex mr-10 grayscale-0">
+				<button
+					class=""
+					onclick="location.href='https://www.facebook.com/providencehouseatx'"
+				>
+					<img class="w-auto px-2 h-8" src="/images/facebook-icon.png" alt="" />
+				</button>
+				<button
+					class=""
+					onclick="location.href='https://www.instagram.com/providencehouseatx/'"
+				>
+					<img
+						class="w-auto px-2 h-8"
+						src="/images/instagram-icon.png"
+						alt=""
+					/>
+				</button>
+			</div>
 		</header>
+
+		<!-- Main content  -->
+
 		<main class="flex justify-center items-center w-screen">
 			<div
-				class="flex flex-col justify-items-center z-20 uppercase font-extrabold text-stone-50 text-right leading-none"
+				class="flex flex-col p-4 justify-items-center z-20 uppercase font-extrabold text-stone-50 text-right leading-none"
 			>
 				<h1 class="text-[12rem]">Providence</h1>
 				<h1 class="text-[12rem]">House</h1>
 				<h1 class="text-[12rem]">atx</h1>
 				<hr class="border-t-4" />
 			</div>
+			<div>
+				<p
+					class="flex flex-col p-6 opacity-90 justify-items-center z-20 text-5xl uppercase font-extrabold text-stone-900 text-left leading-none bg-white"
+				>
+					An<br />
+					Artist<br />
+					Community<br />Backyard<br />
+					Music<br />
+					Venue<br />
+					for<br />
+					friends<br />
+					and<br />
+					neighbors<br />
+					complete<br />
+					with<br />
+					1970's<br />
+					airstream.
+				</p>
+			</div>
 		</main>
 	</body>
-	<script src="script.js"></script>
+	<script src="/js/script.js"></script>
 </html>
